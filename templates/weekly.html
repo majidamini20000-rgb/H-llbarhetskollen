@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Veckorapport </h2>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if total is not none %}
+<p><b>Total CO₂e:</b> {{ total | round(2) }}</p>
+<p>Period: {{ week_start }} → {{ week_end }}</p>
+{% endif %}
+
+<hr>
+
+<h3>Beräkna vecka</h3>
+
+<form method="get" action="/ui/reports/weekly">
+
+    <label>Användare</label><br>
+    <select name="user_id" required>
+        {% for u in users %}
+            <option value="{{ u.id }}">{{ u.name }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <label>Veckostart (måndag)</label><br>
+    <input type="date" name="week_start" required>
+
+    <br><br>
+
+    <button type="submit">Visa rapport</button>
+</form>
+
+<hr>
+
+{% if activities %}
+
+    <h3>Aktiviteter denna vecka</h3>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Datum</th>
+            <th>Kategori</th>
+            <th>Typ</th>
+            <th>Mängd</th>
+            <th>CO₂e</th>
+        </tr>
+
+        {% for a in activities %}
+        <tr>
+            <td>{{ a.date }}</td>
+            <td>{{ a.category }}</td>
+            <td>{{ a.key }}</td>
+            <td>{{ a.amount }}</td>
+            <td>
+                {% if a.co2e is not none %}
+                    {{ a.co2e | round(2) }}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% elif total is not none %}
+    <p>Inga aktiviteter denna vecka.</p>
+{% endif %}
+
+<hr>
+
+<h3>Tips</h3>
+<p>Vecka = måndag → söndag (7 dagar)</p>
+
+{% endblock %}

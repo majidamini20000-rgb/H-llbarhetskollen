@@ -1,0 +1,9 @@
+category,key,unit,co2e_per_unit,source,scope
+travel,car,km,0.19,Example factors (course),direct
+travel,bus,km,0.08,Example factors (course),indirect
+travel,train,km,0.02,Example factors (course),indirect
+travel,bike,km,0.0,Example factors (course),direct
+food,beef,portion,5.0,Example factors (course),lifecycle
+food,chicken,portion,1.7,Example factors (course),lifecycle
+food,vegetarian,portion,0.9,Example factors (course),lifecycle
+energy,electricity,kwh,0.05,Example factors (course),indirect
