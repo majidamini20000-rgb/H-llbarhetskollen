@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt UI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Inter', sans-serif;
+            background:#f5f5f7;
+            color:#111827;
+            padding:60px 20px;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+        }
+
+        h1{
+            font-size:72px;
+            font-weight:700;
+            margin-bottom:20px;
+            color:#0f172a;
+        }
+
+        .line{
+            width:60px;
+            height:4px;
+            background:#6d28d9;
+            border-radius:10px;
+            margin-bottom:30px;
+        }
+
+        .subtitle{
+            font-size:24px;
+            color:#4b5563;
+            line-height:1.6;
+            margin-bottom:50px;
+        }
+
+        .card{
+            background:white;
+            border-radius:24px;
+            padding:28px;
+            margin-bottom:25px;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            text-decoration:none;
+            color:inherit;
+
+            box-shadow:0 10px 30px rgba(0,0,0,0.05);
+
+            transition:0.2s;
+        }
+
+        .card:hover{
+            transform:translateY(-4px);
+            box-shadow:0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .left{
+            display:flex;
+            align-items:center;
+            gap:24px;
+        }
+
+        .icon{
+            width:70px;
+            height:70px;
+            border-radius:50%;
+            background:#ede9fe;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:30px;
+        }
+
+        .card h2{
+            font-size:32px;
+            margin-bottom:8px;
+        }
+
+        .card p{
+            color:#6b7280;
+            font-size:18px;
+        }
+
+        .arrow{
+            font-size:42px;
+            color:#6d28d9;
+        }
+
+        @media(max-width:768px){
+
+            h1{
+                font-size:48px;
+            }
+
+            .subtitle{
+                font-size:18px;
+            }
+
+            .card h2{
+                font-size:24px;
+            }
+
+            .card p{
+                font-size:16px;
+            }
+
+            .icon{
+                width:55px;
+                height:55px;
+                font-size:24px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Hållbarhetskollen</h1>
+
+        <div class="line"></div>
+
+        <p class="subtitle">
+            Hållbarhetskollen är en enkel webbtjänst där du kan logga
+            dina vardagsaktiviteter som resor, mat och energianvändning för att få
+            en tydlig översikt över dina CO₂e-utsläpp per vecka.
+        </p>
+
+        <a href="/ui/users" class="card">
+
+            <div class="left">
+
+                <div class="icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Användare</h2>
+                    <p>Hantera och visa användare.</p>
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+        <a href="/docs" class="card">
+
+            <div class="left">
+
+                <div class="icon">
+                    &lt;/&gt;
+                </div>
+
+                <div>
+                    <h2>Swagger</h2>
+                    <p>Utforska API:et och endpoints.</p>
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+    </div>
+
+</body>
+</html>
